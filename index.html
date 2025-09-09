@@ -119,11 +119,34 @@
       grid-area: text;
     }
 
+    .page-layout {
+      /* Mobile-first: single column is the default behavior. */
+    }
+
+    .viz-panel-sticky {
+      display: none; /* Hidden on mobile by default */
+    }
+
     @media (min-width: 1024px) {
-      .subsection-grid {
-        grid-template-columns: 2fr 1fr;
-        grid-template-areas: "text viz";
+      .page-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
         gap: 3rem;
+        align-items: start;
+      }
+
+      .viz-panel-sticky {
+        display: block;
+        position: sticky;
+        top: 90px; /* 70px header height + 20px buffer */
+        /* Set a height to allow internal scrolling if content is too tall */
+        max-height: calc(100vh - 110px);
+        overflow-y: auto;
+      }
+
+      /* On desktop, hide the inline visualizations that are part of the text flow */
+      .subsection-grid .viz-content {
+        display: none;
       }
     }
 

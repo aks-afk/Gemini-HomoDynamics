@@ -7,6 +7,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 
 const App: React.FC = () => {
   const [currentSectionId, setCurrentSectionId] = useState<string>(contentData[0].id);
+  const [activeSubSectionId, setActiveSubSectionId] = useState<string | null>(null);
   
   useEffect(() => {
     const handleHashChange = () => {
@@ -83,6 +84,8 @@ const App: React.FC = () => {
           <div className="content-wrapper" style={{ padding: '2rem 4rem' }}>
             <SectionPage 
               section={currentSection} 
+              activeSubSectionId={activeSubSectionId}
+              setActiveSubSectionId={setActiveSubSectionId}
             />
             <footer style={{
               textAlign: 'center',
