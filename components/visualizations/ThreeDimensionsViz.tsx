@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const ThreeDimensionsViz: React.FC = () => {
     const [rotation, setRotation] = useState({ x: 0, y: 0 });
-    // FIX: Initialize useRef with null to satisfy the "Expected 1 arguments" error.
     const requestRef = useRef<number | null>(null);
 
     const size = 60;

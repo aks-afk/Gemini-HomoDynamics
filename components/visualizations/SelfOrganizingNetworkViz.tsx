@@ -1,11 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-// FIX: Replace monolithic d3 import with modular imports.
 import { select } from 'd3-selection';
 import { range } from 'd3-array';
 import { forceSimulation, forceLink, forceManyBody, forceCenter } from 'd3-force';
 
-// FIX: Replaced `extends d3.SimulationNodeDatum` with explicit properties to resolve TypeScript errors
-// about properties not existing on the type. This appears to be a type resolution issue.
 interface VizNode {
     id: number;
     index?: number;
@@ -39,8 +36,6 @@ const SelfOrganizingNetworkViz: React.FC = () => {
 
         simulation.on('tick', () => {
             link
-                // FIX: D3 mutates the link objects, replacing `source` and `target` IDs with node objects.
-                // We must cast through `unknown` to inform TypeScript of this change.
                 .attr('x1', d => (d.source as unknown as VizNode).x!)
                 .attr('y1', d => (d.source as unknown as VizNode).y!)
                 .attr('x2', d => (d.target as unknown as VizNode).x!)
@@ -48,8 +43,6 @@ const SelfOrganizingNetworkViz: React.FC = () => {
             node.attr('cx', d => d.x!).attr('cy', d => d.y!);
         });
 
-        // FIX: The useEffect cleanup function must return `void`. `simulation.stop()` returns the simulation instance,
-        // so we wrap it in curly braces to ensure an implicit return of `void`.
         return () => {
             simulation.stop();
         };

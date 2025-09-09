@@ -42,7 +42,6 @@ const NeuroscientificCorrelatesViz: React.FC = () => {
                     />
                 ))}
 
-                {/* FIX: The `x` and `y` props for the `Label` component expect numbers. Passed numeric values in curly braces instead of strings. */}
                 <Label id="reason" text="Reason" x={70} y={70} />
                 <Label id="spirit" text="Spirit" x={70} y={160} />
                 <Label id="appetite" text="Appetite" x={230} y={160} />

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-// FIX: Replace monolithic d3 import with modular imports.
 import { select } from 'd3-selection';
 import { forceSimulation, forceLink, forceManyBody, forceCenter } from 'd3-force';
 
@@ -59,15 +58,15 @@ const WhatIsHomodynamicsViz: React.FC = () => {
 
         simulation.on('tick', () => {
             link
-                .attr('x1', d => (d.source as any).x)
-                .attr('y1', d => (d.source as any).y)
-                .attr('x2', d => (d.target as any).x)
-                .attr('y2', d => (d.target as any).y);
-            node.attr('transform', d => `translate(${d.x}, ${d.y})`);
+                // FIX: Cast to unknown first to satisfy TypeScript's type checker for d3 force link data.
+                .attr('x1', d => (d.source as unknown as VizNode).x!)
+                .attr('y1', d => (d.source as unknown as VizNode).y!)
+                .attr('x2', d => (d.target as unknown as VizNode).x!)
+                .attr('y2', d => (d.target as unknown as VizNode).y!);
+            // FIX: Add non-null assertions as d3-force simulation ensures x and y are numbers.
+            node.attr('transform', d => `translate(${d.x!}, ${d.y!})`);
         });
 
-        // FIX: The useEffect cleanup function should return void. `simulation.stop()` returns the simulation instance,
-        // so we wrap it in curly braces to prevent an implicit return.
         return () => {
             simulation.stop();
         };

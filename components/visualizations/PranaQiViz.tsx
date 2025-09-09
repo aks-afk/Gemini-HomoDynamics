@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-// FIX: Replace monolithic d3 import with modular imports.
 import { select, Selection } from 'd3-selection';
 import { path } from 'd3-path';
 import { range } from 'd3-array';

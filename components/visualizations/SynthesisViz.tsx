@@ -1,12 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-// FIX: Replace monolithic d3 import with modular imports.
 import { select } from 'd3-selection';
 import { scaleOrdinal } from 'd3-scale';
 import { forceSimulation, forceLink, forceManyBody, forceCenter, forceCollide, Simulation } from 'd3-force';
 import { drag, D3DragEvent } from 'd3-drag';
 
-// FIX: Replaced `extends d3.SimulationNodeDatum` with explicit properties to resolve TypeScript errors
-// about properties not existing on the type. This appears to be a type resolution issue.
 interface VizNode {
     id: string;
     group: number;
@@ -102,8 +99,6 @@ const SynthesisViz: React.FC = () => {
 
         simulation.on("tick", () => {
             link
-                // FIX: D3 mutates the link objects, replacing `source` and `target` IDs with node objects.
-                // We must cast through `unknown` to inform TypeScript of this change.
                 .attr("x1", d => (d.source as unknown as VizNode).x!)
                 .attr("y1", d => (d.source as unknown as VizNode).y!)
                 .attr("x2", d => (d.target as unknown as VizNode).x!)
@@ -112,16 +107,12 @@ const SynthesisViz: React.FC = () => {
                 .attr("transform", d => `translate(${d.x},${d.y})`);
         });
 
-        // FIX: The useEffect cleanup function should return void. `simulation.stop()` returns the simulation instance,
-        // so we wrap it in curly braces to prevent an implicit return.
         return () => {
           simulation.stop();
         };
 
-    }, [integration, links, nodes]);
+    }, [integration]); // links and nodes are stable, no need to include them
 
-    // FIX: Renamed local function from `drag` to `dragHandler` to avoid shadowing the `d3-drag` import.
-    // This resolves the "Expected 0 type arguments, but got 2" error on the `drag<...>()` call.
     const dragHandler = (simulation: Simulation<VizNode, undefined>) => {
       function dragstarted(event: D3DragEvent<SVGGElement, VizNode, VizNode>, d: VizNode) {
         if (!event.active) simulation.alphaTarget(0.3).restart();

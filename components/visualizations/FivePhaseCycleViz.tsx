@@ -50,12 +50,20 @@ const FivePhaseCycleViz: React.FC = () => {
             return `M${x1},${y1}L${x2},${y2}`;
         };
         
-        const path = svg.append('path').attr('id', 'cyclePath').attr('fill', 'none');
-        let d = '';
+        let dPath = '';
         for (let i = 0; i < points.length; i++) {
-            d += lineGenerator(points[i], points[(i + 1) % points.length]).replace('M', i === 0 ? 'M' : ' L');
+             const p1 = points[i];
+             const p2 = points[(i+1)%points.length];
+             const dx = p2.x - p1.x;
+             const dy = p2.y - p1.y;
+             const dr = Math.sqrt(dx*dx + dy*dy);
+             const sweep = 0; // 0 for straight line, 1 for arc
+             dPath += ` M ${p1.x} ${p1.y} A ${dr} ${dr} 0 0 ${sweep} ${p2.x} ${p2.y}`;
         }
-        path.attr('d', d);
+
+        const path = svg.append('path').attr('id', 'cyclePath').attr('fill', 'none')
+          .attr('d', `M${points[0].x},${points[0].y} A${radius},${radius} 0 0,1 ${points[1].x},${points[1].y} A${radius},${radius} 0 0,1 ${points[2].x},${points[2].y} A${radius},${radius} 0 0,1 ${points[3].x},${points[3].y} A${radius},${radius} 0 0,1 ${points[4].x},${points[4].y} A${radius},${radius} 0 0,1 ${points[0].x},${points[0].y}`);
+
         
         const paths = svg.selectAll('.cycle-edge')
             .data(points)

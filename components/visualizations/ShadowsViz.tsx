@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 
 const ShadowsViz: React.FC = () => {
     const ref = useRef<HTMLDivElement>(null);
-    // FIX: Initialize useRef with null to satisfy the "Expected 1 arguments, but got 0" error.
     const animationFrameId = useRef<number | null>(null);
 
     useEffect(() => {

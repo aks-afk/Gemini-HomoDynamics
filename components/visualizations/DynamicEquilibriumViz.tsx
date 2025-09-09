@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-// FIX: Replace monolithic d3 import with modular imports.
 import { select } from 'd3-selection';
 import { range } from 'd3-array';
 import { forceSimulation, forceLink, forceManyBody, forceCenter, forceX, forceY, Simulation } from 'd3-force';
@@ -76,8 +75,6 @@ const DynamicEquilibriumViz: React.FC = () => {
 
   }, []);
   
-  // FIX: Renamed local function from `drag` to `dragHandler` to avoid shadowing the `d3-drag` import.
-  // This resolves the "Expected 0 type arguments, but got 2" error on the `drag<...>()` call.
   const dragHandler = (simulation: Simulation<VizNode, undefined>) => {
     function dragstarted(event: D3DragEvent<SVGCircleElement, VizNode, VizNode>, d: VizNode) {
       if (!event.active) simulation.alphaTarget(0.3).restart();

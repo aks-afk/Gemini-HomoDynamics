@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-// FIX: Replace monolithic d3 import with modular imports.
 import { select } from 'd3-selection';
 import { forceSimulation, forceManyBody, forceCenter, Simulation } from 'd3-force';
 import 'd3-transition';
 
-// FIX: Remove `extends d3.SimulationNodeDatum` and define properties to resolve type error.
 interface VizNode {
   id: number;
   index?: number;
@@ -19,7 +17,6 @@ interface VizNode {
 const AttractorShiftViz: React.FC = () => {
     const ref = useRef<SVGSVGElement>(null);
     const [shifted, setShifted] = useState(false);
-    // FIX: Initialize useRef with null to satisfy the "Expected 1 arguments" error.
     const simulationRef = useRef<Simulation<VizNode, undefined> | null>(null);
 
     useEffect(() => {
@@ -66,8 +63,6 @@ const AttractorShiftViz: React.FC = () => {
             node.attr('cx', d => d.x!).attr('cy', d => d.y!);
         });
         
-        // FIX: The useEffect cleanup function should return void. `simulation.stop()` returns the simulation instance,
-        // so we wrap it in curly braces to prevent an implicit return.
         return () => {
             simulationRef.current?.stop();
         };

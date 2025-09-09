@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-// FIX: Replace monolithic d3 import with modular imports.
 import { select, pointer } from 'd3-selection';
 import { range } from 'd3-array';
 import { forceSimulation, forceManyBody, forceCenter, forceCollide, forceX, forceY } from 'd3-force';
