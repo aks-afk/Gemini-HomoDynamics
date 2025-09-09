@@ -74,6 +74,14 @@ import FreeEnergyMinimizationViz from './components/visualizations/FreeEnergyMin
 import SelfOrganizingNetworkViz from './components/visualizations/SelfOrganizingNetworkViz';
 import OrderAndChaosViz from './components/visualizations/OrderAndChaosViz';
 
+// Newly created visualization imports
+import StaticVsDynamicModelsViz from './components/visualizations/StaticVsDynamicModelsViz';
+import NeuroscientificCorrelatesViz from './components/visualizations/NeuroscientificCorrelatesViz';
+import FivePhaseCycleViz from './components/visualizations/FivePhaseCycleViz';
+import ThreePillarsViz from './components/visualizations/ThreePillarsViz';
+import NeuralEnergeticsViz from './components/visualizations/NeuralEnergeticsViz';
+import NeuromodulationViz from './components/visualizations/NeuromodulationViz';
+
 const DummyViz = () => null;
 
 export const contentData: Section[] = [
@@ -85,89 +93,68 @@ export const contentData: Section[] = [
     subSections: [
       {
         id: "about-what",
-        title: "What is Homodynamics?",
+        title: "From Philosophical Inquiry to a Modern Framework",
         content: [
-          "Homodynamics is a philosophical framework that synthesizes ancient wisdom traditions with modern scientific understanding to explore the fundamental dynamics of human consciousness and experience.",
-          "At its core, Homodynamics examines how human beings navigate the complex interplay between biological drives, rational thought, and spiritual aspiration—what Plato called the \"tripartite soul.\" Through interactive visualizations, the framework bridges Eastern and Western philosophical traditions, revealing universal patterns in human development and consciousness."
+          "Homodynamics is a framework for understanding the nature of human flourishing. It begins with a simple but profound observation: living systems are not static machines. They are dynamic, ever-changing processes that maintain stability precisely *through* change, not in spite of it.",
+          "This website translates that core idea into an explorable journey. By synthesizing ancient wisdom from traditions like Platonism and Buddhism with modern scientific principles from systems theory and neurobiology, Homodynamics offers a unified lens to examine the patterns that govern our inner lives."
         ],
         component: WhatIsHomodynamicsViz,
       },
       {
         id: "about-originator",
-        title: "The Originator: Amit Srivastava",
+        title: "A Vision by Amit Srivastava",
         content: [
-          "Amit Srivastava is the originator and creator of the Homodynamics framework. Drawing from extensive study of philosophy, psychology, and systems theory, Amit developed Homodynamics as a bridge between ancient wisdom and contemporary challenges. His vision was to create an accessible, interactive exploration of human consciousness that transcends traditional academic boundaries and speaks directly to the human experience.",
-          "Through Homodynamics, Amit seeks to illuminate the hidden patterns that shape our lives, offering both intellectual understanding and practical wisdom for navigating the complexities of modern existence."
+          "Amit Srivastava, the originator of Homodynamics, envisioned a new way to engage with life's deepest questions. Frustrated by the gap between the timeless insights of philosophy and the empirical rigor of science, he sought to create a bridge.",
+          "Homodynamics is the result of that vision: a framework that is both intellectually robust and deeply practical. It is a tool for thought, designed to help us navigate the complexities of our own consciousness with greater clarity, purpose, and balance."
         ],
         component: OriginatorViz,
       },
       {
         id: "about-synthesis",
-        title: "The Synthesis Approach",
+        title: "A Bridge Between Worlds",
         content: [
-          "Homodynamics draws from multiple philosophical and scientific traditions, presenting them not as competing worldviews, but as interconnected lenses that together form a more complete understanding of human potential.",
+          "The power of Homodynamics lies in its synthesis. It doesn't treat ancient wisdom and modern science as separate domains, but as complementary languages describing the same fundamental reality.",
           `<ul style="list-style-type: disc; padding-left: 20px;">
-            <li style="margin-bottom: 0.5em;"><strong>Ancient Wisdom:</strong> Plato's Allegory of the Cave, Buddhist Eightfold Path, Vedic Purusharthas, Taoist energy flow (Qì/Prāṇa)</li>
-            <li style="margin-bottom: 0.5em;"><strong>Modern Science:</strong> Systems theory, cognitive science, physics, and complexity theory</li>
-            <li style="margin-bottom: 0.5em;"><strong>Human Experience:</strong> Psychology, ethics, and the search for meaning in an increasingly complex world</li>
-           </ul>`
+            <li style="margin-bottom: 0.5em;"><strong>Ancient Wisdom:</strong> We draw from the deep insights of Plato's Tripartite Soul, the Buddhist Eightfold Path, Vedic concepts of Prāṇa, and more.</li>
+            <li style="margin-bottom: 0.5em;"><strong>Modern Science:</strong> We apply the lens of thermodynamics, control theory, network science, and neurobiology to give these ancient ideas a concrete foundation.</li>
+           </ul>`,
+           "Through this integration, abstract concepts become tangible principles for living a more coherent and fulfilling life."
         ],
         component: SynthesisApproachViz,
       },
       {
         id: "about-interactive",
-        title: "Interactive Exploration",
+        title: "Philosophy in Motion",
         content: [
-          "Unlike traditional philosophical texts, Homodynamics uses dynamic visualizations to make abstract concepts tangible and explorable. Each visualization serves as both:",
-          `<ul style="list-style-type: disc; padding-left: 20px;">
-            <li style="margin-bottom: 0.5em;">A teaching tool that illuminates philosophical principles</li>
-            <li style="margin-bottom: 0.5em;">An experiential interface that invites personal reflection and insight</li>
-          </ul>`
+          "Ideas are most powerful when they are experienced. This website is built on the principle of interactive exploration. Instead of static text, Homodynamics uses dynamic visualizations as a core part of its narrative.",
+          "Each visualization is a 'thought experiment' you can engage with directly. They are designed to transform abstract theories into intuitive, felt experiences, allowing you to see the patterns of your own mind reflected in the principles on the screen."
         ],
         component: InteractiveExplorationViz,
       },
-      {
-        id: "about-journey",
-        title: "The Allegorical Journey",
-        content: [
-          "The website guides visitors through a transformative journey of philosophical discovery:",
-          `<ol style="list-style-position: inside; padding-left: 0;">
-              <li style="margin-bottom: 0.5em;"><strong>The Cave:</strong> Recognizing the limitations of current perception and the shadows that shape our understanding</li>
-              <li style="margin-bottom: 0.5em;"><strong>The Ascent:</strong> Discovering the tripartite nature: biological drives, logical reasoning, and intellectual aspiration</li>
-              <li style="margin-bottom: 0.5em;"><strong>The World Outside:</strong> Experiencing life through the fundamental dimensions of energy, space, and time</li>
-              <li style="margin-bottom: 0.5em;"><strong>Exploration:</strong> Understanding life goals (Puruṣārthas) and navigating ethical frameworks</li>
-              <li style="margin-bottom: 0.5em;"><strong>The Practice:</strong> Applying balance tools (Eight Limbs of Yoga) for harmonious living</li>
-              <li style="margin-bottom: 0.5em;"><strong>The Return:</strong> Integrating philosophical insights into modern life and relationships</li>
-          </ol>`
-        ],
-        component: AllegoricalJourneyViz,
-      },
-      {
+       {
         id: "about-mission",
-        title: "Purpose and Mission",
+        title: "Our Mission",
         content: [
-          "Homodynamics exists to:",
+          "Our mission is to make deep, integrative thinking accessible to everyone. We aim to:",
           `<ul style="list-style-type: disc; padding-left: 20px;">
-            <li style="margin-bottom: 0.5em;">Bridge ancient and modern wisdom for contemporary challenges</li>
-            <li style="margin-bottom: 0.5em;">Make philosophy accessible through visual and interactive experiences</li>
-            <li style="margin-bottom: 0.5em;">Foster personal growth by connecting individual experience with universal patterns</li>
-            <li style="margin-bottom: 0.5em;">Promote integrative thinking in an era of increasing specialization</li>
+            <li style="margin-bottom: 0.5em;"><strong>Demystify Complexity:</strong> To break down the complex dynamics of human consciousness into clear, understandable principles.</li>
+            <li style="margin-bottom: 0.5em;"><strong>Foster Self-Awareness:</strong> To provide tools that encourage personal reflection and a deeper understanding of one's own inner world.</li>
+            <li style="margin-bottom: 0.5em;"><strong>Promote Balance:</strong> To offer a path toward navigating the competing demands of life with greater wisdom and less internal friction.</li>
           </ul>`,
-          `<blockquote style="border-left: 2px solid #C1C1C1; padding-left: 1rem; margin: 1rem 0; font-style: italic;">"Homodynamics is not just a website—it's an invitation to explore the hidden patterns that shape human experience, bridging the wisdom of the past with the challenges of the present."
-          <br/>— Amit Srivastava, Originator of Homodynamics</blockquote>`
+          `<blockquote style="border-left: 2px solid #C1C1C1; padding-left: 1rem; margin: 1rem 0; font-style: italic;">"Homodynamics is an invitation to become a more skillful participant in the dynamic process of your own life."
+          <br/>— Amit Srivastava</blockquote>`
         ],
         component: MissionViz,
       },
        {
         id: "about-design",
-        title: "Design Philosophy",
+        title: "The Aesthetic of Contemplation",
         content: [
-          "The website's design reflects its content:",
+          "The design of this website is intentional, crafted to support its philosophical purpose. Every element is chosen to create an environment of focused contemplation:",
           `<ul style="list-style-type: disc; padding-left: 20px;">
-            <li style="margin-bottom: 0.5em;"><strong>Georgia serif typography</strong> evokes classical philosophical texts</li>
-            <li style="margin-bottom: 0.5em;"><strong>Muted color palette</strong> encourages contemplation and focus</li>
-            <li style="margin-bottom: 0.5em;"><strong>Clean, academic aesthetic</strong> prioritizes content over distraction</li>
-            <li style="margin-bottom: 0.5em;"><strong>Responsive design</strong> ensures accessibility across all devices</li>
+            <li style="margin-bottom: 0.5em;"><strong>Classical Typography:</strong> The use of Georgia serif font evokes the timeless nature of philosophical inquiry.</li>
+            <li style="margin-bottom: 0.5em;"><strong>Muted Palette:</strong> The calm, earthy colors are designed to minimize distraction and encourage focus.</li>
+            <li style="margin-bottom: 0.5em;"><strong>Minimalist Layout:</strong> A clean, uncluttered aesthetic prioritizes the content and the ideas it conveys.</li>
           </ul>`
         ],
         component: DesignPhilosophyViz,
@@ -182,40 +169,34 @@ export const contentData: Section[] = [
     subSections: [
       {
         id: "intro-definition",
-        title: "Foundational Definition and Scope",
+        title: "From Static Homeostasis to Dynamic Equilibrium",
         content: [
-          "<strong>Homodynamics</strong> represents a theoretical synthesis that emerged from the recognition that traditional approaches to human development, performance, and wellbeing have been constrained by static, mechanistic models borrowed from 19th-century physics. The term itself derives from the Greek <em>homos</em> (same, uniform) and <em>dynamis</em> (power, force), but paradoxically describes systems that maintain their identity precisely through continuous change—a concept that bridges ancient wisdom traditions with cutting-edge complexity science.",
-          "At its core, Homodynamics posits that <strong>living systems achieve stability through regulated change rather than rigid homeostasis</strong>. This principle applies across scales from cellular metabolism to psychological resilience to social organization. Unlike traditional homeostatic models that seek fixed setpoints, homodynamic systems operate within <strong>dynamic ranges</strong> that shift based on context, history, and anticipated future demands.",
-          "The scope of Homodynamics encompasses:",
-          "<p><strong>Individual Level Applications:</strong></p><ul><li>Cognitive performance optimization through attention regulation and energy management</li><li>Emotional resilience through adaptive stress response and recovery protocols</li><li>Physical health through metabolic flexibility and circadian rhythm optimization</li><li>Learning and skill acquisition through optimal challenge-recovery cycles</li></ul>",
-          "<p><strong>Systems Level Applications:</strong></p><ul><li>Organizational design for adaptive capacity and innovation</li><li>Educational environments that support natural learning rhythms</li><li>Healthcare approaches that strengthen regulatory capacity rather than suppress symptoms</li><li>Social systems that maintain cohesion while enabling individual expression</li></ul>",
-          "<p><strong>Theoretical Contributions:</strong></p><ul><li>Integration of ancient contemplative insights with modern scientific findings</li><li>Mathematical frameworks for modeling human development and change</li><li>Practical methodologies for assessing and enhancing adaptive capacity</li><li>Bridge between Eastern and Western approaches to human optimization</li></ul>"
+          "For centuries, we've viewed health and stability through the lens of **homeostasis**—a state of rigid, unchanging balance. This idea, borrowed from 19th-century physics, suggests that an ideal system is one at rest, a machine that resists deviation. But life is not a machine at rest; it is a process in motion.",
+          "<strong>Homodynamics</strong> offers a new paradigm. It posits that living systems—from a single cell to a human mind—achieve stability not by resisting change, but by skillfully navigating it. This is the principle of **dynamic equilibrium**, or <u>allostasis</u>. Health is not the absence of stress, but the capacity to adapt to it. Flourishing is not a static state to be achieved, but a continuous, adaptive dance."
         ],
         component: IntroductionLifeViz,
       },
       {
         id: "intro-static-models",
-        title: "The Problem of Static Models",
+        title: "The Limitations of a Clockwork View",
         content: [
-          "Traditional approaches to human development have been dominated by <strong>equilibrium-seeking models</strong> that view health as the absence of perturbation and optimal function as the maintenance of stable states. This mechanistic paradigm, while useful for understanding simple physical systems, proves inadequate for comprehending the dynamic nature of living organisms and conscious beings.",
-          "The limitations of static models become apparent in several domains:",
-          "<p><strong>Clinical Psychology:</strong> Diagnostic categories that pathologize natural variation and responses to environmental stressors, leading to interventions that suppress symptoms rather than enhance adaptive capacity.</p>",
-          "<p><strong>Education:</strong> Standardized approaches that ignore individual learning rhythms and developmental trajectories, resulting in one-size-fits-all solutions that optimize for average rather than individual potential.</p>",
-          "<p><strong>Organizational Management:</strong> Command-and-control structures that prioritize predictability over innovation, creating brittle systems that fail when faced with novel challenges.</p>",
-          "<p><strong>Personal Development:</strong> Goal-setting paradigms that emphasize fixed outcomes rather than adaptive processes, leading to either rigid pursuit of predetermined objectives or paralysis when circumstances change.</p>"
+          "The old, static models of human development have profound and often detrimental consequences. When we treat ourselves like machines, we pathologize natural variation and suppress symptoms rather than building adaptive capacity.",
+          "This mechanistic view leads to:",
+          "<p><strong>Brittle Systems:</strong> In personal development and organizational management, a focus on rigid goals and predictable outcomes creates systems that shatter under unexpected pressure.</p>",
+          "<p><strong>Symptom Suppression:</strong> In psychology and medicine, treating stress signals as errors to be silenced leads to interventions that mask underlying issues instead of enhancing the system's regulatory strength.</p>",
+          "<p><strong>One-Size-Fits-All Solutions:</strong> In education and training, standardized approaches ignore the natural, dynamic rhythms of individual learning and growth.</p>"
         ],
-        component: DummyViz,
+        component: StaticVsDynamicModelsViz,
       },
       {
         id: "intro-alternative",
-        title: "The Homodynamic Alternative",
+        title: "A New Paradigm for Flourishing",
         content: [
-          "Homodynamics offers a <strong>process-oriented alternative</strong> that views stability as an emergent property of well-regulated dynamic systems. Rather than seeking to eliminate variation, homodynamic approaches work with natural rhythms and cycles to enhance the system's ability to maintain coherent function across diverse conditions.",
-          "This shift in perspective has profound implications:",
-          "<p><strong>From Homeostasis to Allostasis:</strong> Instead of maintaining fixed internal states, organisms anticipate future demands and adjust their regulatory parameters accordingly—\"stability through change\" rather than \"stability despite change.\"</p>",
-          "<p><strong>From Symptoms to Signals:</strong> Apparent problems become information about system dynamics, pointing toward leverage points for sustainable improvement rather than targets for suppression.</p>",
-          "<p><strong>From Optimization to Satisficing:</strong> Rather than maximizing any single metric, homodynamic systems seek configurations that satisfy multiple constraints simultaneously while maintaining flexibility for future adaptation.</p>",
-          "<p><strong>From Individual to Systemic:</strong> Personal development becomes inseparable from environmental design, recognizing that sustainable change requires alignment between individual capacities and contextual support.</p>"
+          "Homodynamics provides a process-oriented alternative. It reframes our approach to well-being by viewing stability as an emergent property of a well-regulated dynamic system. Instead of fighting variation, we learn to work with it.",
+          "This shift in perspective changes everything:",
+          "<p><strong>From Symptoms to Signals:</strong> Difficulties are no longer problems to be eliminated, but valuable information about the system's dynamics. They are signals pointing toward leverage points for growth.</p>",
+          "<p><strong>From Optimization to Coherence:</strong> Instead of maximizing a single metric (like productivity or happiness), the goal becomes achieving a coherent state that satisfies multiple constraints while preserving flexibility.</p>",
+          "<p><strong>From Isolation to Integration:</strong> Personal growth becomes inseparable from our environment. Sustainable change requires aligning our internal capacities with the systems that support us.</p>"
         ],
         component: IntroductionFeedbackViz,
       },
@@ -245,9 +226,9 @@ export const contentData: Section[] = [
         id: "soul-components",
         title: "The Three Components",
         content: ["Plato identified three fundamental aspects of human nature:",
-        "<p><strong>Reason (Logistikon):</strong> The rational, calculating element responsible for:</p><ul><li>Long-term planning and strategic thinking</li><li>Abstract reasoning and logical analysis</li><li>Goal setting and priority evaluation</li><li>Integration of information from multiple sources</li><li>Moral reasoning and ethical judgment</li></ul>",
-        "<p><strong>Spirit (Thymoeides):</strong> The emotional, assertive force characterized by:</p><ul><li>Motivation and drive toward objectives</li><li>Courage in facing challenges and obstacles</li><li>Pride and self-respect in achievements</li><li>Anger at injustice or interference</li><li>Energy for sustained effort and perseverance</li></ul>",
-        "<p><strong>Appetite (Epithymetikon):</strong> The desire-driven component encompassing:</p><ul><li>Basic physiological needs (food, shelter, safety)</li><li>Sensual pleasures and immediate gratification</li><li>Material acquisition and resource accumulation</li><li>Comfort-seeking and pain-avoidance behaviors</li><li>Reproductive and social bonding drives</li></ul>"
+        "<p><strong>Reason (Logistikon):</strong> The rational, calculating element responsible for long-term planning, abstract thought, and moral judgment.</p>",
+        "<p><strong>Spirit (Thymoeides):</strong> The emotional, assertive force characterized by motivation, courage, and the drive for honor.</p>",
+        "<p><strong>Appetite (Epithymetikon):</strong> The desire-driven component encompassing basic physiological needs, sensual pleasures, and material wants.</p>"
       ],
         component: ThreeComponentsViz,
       },
@@ -256,9 +237,8 @@ export const contentData: Section[] = [
         title: "Dynamic Relationships and Justice",
         content: [
           "Crucially, Plato understood that <strong>psychological health emerges from the dynamic relationships among these components</strong> rather than the dominance of any single element. Justice in the soul occurs when:",
-          "<ul><li><strong>Reason provides direction</strong> by establishing goals aligned with long-term wellbeing</li><li><strong>Spirit supplies energy</strong> for pursuing these goals with persistence and courage</li><li><strong>Appetite offers feedback</strong> about immediate needs and environmental opportunities</li><li><strong>All three cooperate</strong> in a coordinated response to life's challenges</li></ul>",
-          "This model anticipates several key insights of modern systems theory:",
-          "<p><strong>Distributed Control:</strong> No single component controls the entire system; optimal function emerges from coordination among specialized subsystems.</p><p><strong>Hierarchical Organization:</strong> Reason operates at a higher level of abstraction, setting contexts within which spirit and appetite function, but depends on these lower levels for implementation and feedback.</p><p><strong>Dynamic Balance:</strong> Health requires active regulation rather than static equilibrium; the relative influence of each component must adjust based on situational demands.</p><p><strong>Failure Modes:</strong> Dysfunction occurs when components become disconnected (reason without energy, spirit without direction, appetite without regulation) or when one dominates inappropriately.</p>"
+          "<ul><li><strong>Reason provides direction</strong>, establishing goals aligned with long-term wellbeing.</li><li><strong>Spirit supplies energy</strong>, pursuing these goals with persistence and courage.</li><li><strong>Appetite offers feedback</strong>, signaling immediate needs and opportunities.</li></ul>",
+          "A healthy soul is a well-regulated system characterized by distributed control, hierarchical organization, and dynamic balance, where dysfunction arises from disconnection or improper dominance of one part."
         ],
         component: HarmonyBalanceViz,
       },
@@ -267,22 +247,18 @@ export const contentData: Section[] = [
         title: "Modern Neuroscientific Correlates",
         content: [
           "Contemporary neuroscience has largely vindicated Plato's insights through the identification of brain networks that correspond remarkably well to his tripartite model:",
-          "<p><strong>Prefrontal Cortex (Reason):</strong> Executive functions including working memory, cognitive flexibility, inhibitory control, and abstract reasoning—precisely the capacities Plato attributed to the rational soul.</p>",
-          "<p><strong>Anterior Cingulate Cortex (Spirit):</strong> Conflict monitoring, effort allocation, motivation, and emotional regulation—functions that align with Plato's spirited element as the executive coordinator between reason and appetite.</p>",
-          "<p><strong>Limbic and Subcortical Systems (Appetite):</strong> Reward processing, basic drives, emotional responses, and homeostatic regulation—the physiological and hedonic functions that Plato recognized as the appetitive foundation of behavior.</p>",
-          "Modern research on <strong>executive function</strong>, <strong>emotional regulation</strong>, and <strong>motivation</strong> consistently demonstrates that optimal performance requires coordination among these systems rather than the dominance of \"rational\" prefrontal areas over \"emotional\" limbic regions."
+          "<p><strong>Prefrontal Cortex (Reason):</strong> Governs executive functions like planning, working memory, and inhibitory control.</p>",
+          "<p><strong>Anterior Cingulate Cortex & Amygdala (Spirit):</strong> Regulates motivation, effort allocation, and emotional responses like pride and anger.</p>",
+          "<p><strong>Limbic & Subcortical Systems (Appetite):</strong> Manages reward processing, basic drives, and homeostatic regulation.</p>",
+          "Modern research confirms that optimal performance requires coordination among these systems, not just top-down control by the 'rational' prefrontal cortex."
         ],
-        component: DummyViz,
+        component: NeuroscientificCorrelatesViz,
       },
       {
         id: "soul-implications",
         title: "Homodynamic Implications",
         content: [
-          "Plato's tripartite model provides crucial insights for Homodynamic theory:",
-          "<p><strong>Energy Management:</strong> The system requires adequate resources (appetite) to fuel sustained effort (spirit) in service of meaningful goals (reason). Energy depletion at any level compromises the entire system.</p>",
-          "<p><strong>Adaptive Regulation:</strong> Different situations call for different balances among the three components. Crisis situations may require spirit to take temporary precedence, while complex planning tasks demand greater influence from reason.</p>",
-          "<p><strong>Developmental Trajectories:</strong> Healthy development involves not the suppression of appetite or spirit by reason, but the gradual integration of all three components into increasingly sophisticated patterns of coordination.</p>",
-          "<p><strong>Intervention Strategies:</strong> Effective change requires addressing all three levels simultaneously rather than trying to modify one component in isolation.</p>"
+          "Plato's model provides crucial insights for Homodynamic theory, highlighting the importance of <strong>Energy Management</strong> (fueling the system), <strong>Adaptive Regulation</strong> (adjusting the balance between parts based on context), and a view of development not as suppression, but as a gradual <strong>Integration</strong> of all three components."
         ],
         component: CoupledFeedbackLoopsViz,
       }
@@ -383,9 +359,9 @@ export const contentData: Section[] = [
             title: "Five Phase Theory: Cyclical Transformation",
             content: [
                 "<strong>Wu Xing</strong> (Five Phase theory) describes how qì transforms through five basic patterns, each associated with different qualities, seasons, and organ systems: Wood (growth), Fire (maturation), Earth (stability), Metal (contraction), and Water (storage).",
-                "The qì framework anticipates several insights from contemporary complexity science, including emergence, nonlinearity, self-organization, and adaptive cycles."
+                "This framework, much like modern complexity science, emphasizes emergence, nonlinearity, self-organization, and the existence of adaptive cycles."
             ],
-            component: DummyViz
+            component: FivePhaseCycleViz
         },
         {
             id: "prana-qi-homodynamics",
@@ -449,11 +425,12 @@ export const contentData: Section[] = [
         id: "path-pillars",
         title: "The Three Pillars",
         content: [
-            "<p><strong>Wisdom Group (System Architecture):</strong></p><ul><li><strong>Right View:</strong> Accurate models of reality and causation.</li><li><strong>Right Intention:</strong> Appropriate goal specification and motivation.</li></ul>",
-            "<p><strong>Ethical Conduct Group (Environmental Interface):</strong></p><ul><li><strong>Right Speech:</strong> Communication that reduces system noise.</li><li><strong>Right Action:</strong> Behaviors that support system stability.</li><li><strong>Right Livelihood:</strong> Resource acquisition aligned with long-term health.</li></ul>",
-            "<p><strong>Mental Discipline Group (Internal Regulation):</strong></p><ul><li><strong>Right Effort:</strong> Appropriate energy allocation and pacing.</li><li><strong>Right Mindfulness:</strong> Accurate, real-time monitoring of system states.</li><li><strong>Right Concentration:</strong> Stable attention and focused information processing.</li></ul>"
+            "The eight factors of the path are organized into three core pillars, which function as an integrated control system:",
+            "<p><strong>Wisdom Group (System Architecture):</strong> Right View and Right Intention establish accurate models of reality and align motivations.</p>",
+            "<p><strong>Ethical Conduct Group (Environmental Interface):</strong> Right Speech, Action, and Livelihood create a stable environment that reduces system noise.</p>",
+            "<p><strong>Mental Discipline Group (Internal Regulation):</strong> Right Effort, Mindfulness, and Concentration refine the system's internal regulatory capacity.</p>"
         ],
-        component: DummyViz,
+        component: ThreePillarsViz,
         subSections: [
             { id: "path-pillar-wisdom", title: "Pillar 1: Wisdom", content: ["This pillar focuses on designing the system's architecture through <strong>Right View</strong> (accurate mental models of reality) and <strong>Right Intention</strong> (values clarification and purpose alignment). It is equivalent to systems thinking and having evidence-based worldviews."], component: WisdomPillarViz },
             { id: "path-pillar-conduct", title: "Pillar 2: Ethical Conduct", content: ["This pillar designs the system's environmental interface through <strong>Right Speech</strong>, <strong>Right Action</strong>, and <strong>Right Livelihood</strong>. It is about creating stable life conditions that reduce system entropy and support mental development."], component: EthicalConductPillarViz },
@@ -588,12 +565,12 @@ export const contentData: Section[] = [
     id: "neural-energetics",
     title: "Neural Energetics and Metabolic Coupling",
     shortTitle: "Neural Energetics",
-    component: DummyViz,
+    component: NeuralEnergeticsViz,
     subSections: [
         {
             id: "ne-intro",
             title: "",
-            content: ["The <strong>energetic basis of neural function</strong> provides the physiological foundation for homodynamic regulation. The brain consumes ~20% of total metabolic energy, requiring sophisticated mechanisms for coupling energy supply with computational demand.", "The <strong>Astrocyte-Neuron Lactate Shuttle (ANLS)</strong> model shows how astrocytes supply metabolic fuel (lactate) to active neurons. Cognitive performance, emotional regulation, and behavioral flexibility all depend on adequate energy availability, making energy management a primary consideration for optimal function."]
+            content: ["The <strong>energetic basis of neural function</strong> provides the physiological foundation for homodynamic regulation. The brain consumes ~20% of total metabolic energy, requiring sophisticated mechanisms for coupling energy supply with computational demand.", "The <strong>Astrocyte-Neuron Lactate Shuttle (ANLS)</strong> model shows how astrocytes play a crucial role in supplying metabolic fuel (lactate) to active neurons. Cognitive performance, emotional regulation, and behavioral flexibility all depend on adequate energy availability, making energy management a primary consideration for optimal function."]
         }
     ]
   },
@@ -601,7 +578,7 @@ export const contentData: Section[] = [
     id: "neuromodulation",
     title: "Neuromodulatory Systems",
     shortTitle: "Neuromodulation",
-    component: DummyViz,
+    component: NeuromodulationViz,
     subSections: [
         {
             id: "nm-intro",
